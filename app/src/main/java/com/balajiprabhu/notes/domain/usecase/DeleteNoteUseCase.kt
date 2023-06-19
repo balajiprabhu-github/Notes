@@ -4,9 +4,9 @@ import com.balajiprabhu.notes.domain.model.Note
 import com.balajiprabhu.notes.domain.repository.NoteRepository
 
 class DeleteNoteUseCase(
-    private val noteRepository: NoteRepository
+    private val repository: NoteRepository
 ) {
     suspend operator fun invoke(note: Note) {
-        noteRepository.deleteNote(note)
+        repository.deleteNote(note)
     }
 }

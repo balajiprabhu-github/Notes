@@ -6,6 +6,7 @@ import com.balajiprabhu.notes.data.repository.NoteRepositoryImpl
 import com.balajiprabhu.notes.data.source.NoteDao
 import com.balajiprabhu.notes.data.source.NoteDataBase
 import com.balajiprabhu.notes.domain.repository.NoteRepository
+import com.balajiprabhu.notes.domain.usecase.AddNoteUseCase
 import com.balajiprabhu.notes.domain.usecase.DeleteNoteUseCase
 import com.balajiprabhu.notes.domain.usecase.GetNotesUseCase
 import com.balajiprabhu.notes.domain.usecase.NoteUseCases
@@ -41,7 +42,8 @@ object AppModule {
     fun provideNoteUseCases(repository: NoteRepository): NoteUseCases {
         return NoteUseCases(
             getNotesUseCase = GetNotesUseCase(repository),
-            deleteNoteUseCase = DeleteNoteUseCase(repository)
+            deleteNoteUseCase = DeleteNoteUseCase(repository),
+            addNoteUseCase = AddNoteUseCase(repository)
         )
     }
 }

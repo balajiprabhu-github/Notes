@@ -10,7 +10,6 @@ import com.balajiprabhu.notes.ui.theme.Purple
 import com.balajiprabhu.notes.ui.theme.Yellow
 import java.sql.Timestamp
 
-
 @Entity(tableName = "note")
 data class Note(
     val title: String,
@@ -23,3 +22,5 @@ data class Note(
         val notesColors = listOf(Pink,LightGreen,Purple,Yellow,Blue,Orange)
     }
 }
+
+class InvalidNoteException(message : String) : Exception(message)
