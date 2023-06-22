@@ -8,6 +8,7 @@ import com.balajiprabhu.notes.data.source.NoteDataBase
 import com.balajiprabhu.notes.domain.repository.NoteRepository
 import com.balajiprabhu.notes.domain.usecase.AddNoteUseCase
 import com.balajiprabhu.notes.domain.usecase.DeleteNoteUseCase
+import com.balajiprabhu.notes.domain.usecase.GetNoteUseCase
 import com.balajiprabhu.notes.domain.usecase.GetNotesUseCase
 import com.balajiprabhu.notes.domain.usecase.NoteUseCases
 import dagger.Module
@@ -43,7 +44,8 @@ object AppModule {
         return NoteUseCases(
             getNotesUseCase = GetNotesUseCase(repository),
             deleteNoteUseCase = DeleteNoteUseCase(repository),
-            addNoteUseCase = AddNoteUseCase(repository)
+            addNoteUseCase = AddNoteUseCase(repository),
+            getNoteUseCase = GetNoteUseCase(repository)
         )
     }
 }
